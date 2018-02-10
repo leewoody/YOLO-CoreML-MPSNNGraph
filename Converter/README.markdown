@@ -10,5 +10,7 @@ If you want to convert the pre-trained models by yourself. Here is the instructi
 
 `% flow --model yolo.cfg --load yolo.weights --savepb`
 
-4. Launch Jupyter notebook and open _Convert_pb_coreml.ipynb_, and run the script. After it finishes you will get yolo.mlmodel. Copy the file to Xcode project. 
+4. Install [tf-coreml](https://github.com/tf-coreml/tf-coreml).
+
+5. Launch Jupyter notebook and open _Convert_pb_coreml.ipynb_, and run the script. After it finishes you will get yolo.mlmodel. Copy the file to Xcode project. 
 
