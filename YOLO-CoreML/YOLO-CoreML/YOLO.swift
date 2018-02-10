@@ -3,6 +3,7 @@ import UIKit
 import CoreML
 
 class YOLO {
+  // YOLO2 input is 608x608
   public static let inputWidth = 608
   public static let inputHeight = 608
   public static let maxBoundingBoxes = 10
@@ -41,14 +42,14 @@ class YOLO {
     let boxesPerCell = 5;//Int(anchors.count/5)
     let numClasses = 80
 
-    // The 416x416 image is divided into a 13x13 grid. Each of these grid cells
+    // The 608x608 image is divided into a 19x19 grid. Each of these grid cells
     // will predict 5 bounding boxes (boxesPerCell). A bounding box consists of
     // five data items: x, y, width, height, and a confidence score. Each grid
     // cell also predicts which class each bounding box belongs to.
     //
     // The "features" array therefore contains (numClasses + 5)*boxesPerCell
-    // values for each grid cell, i.e. 125 channels. The total features array
-    // contains 125x13x13 elements.
+    // values for each grid cell, i.e. 425 channels. The total features array
+    // contains 425x19x19 elements.
 
     // NOTE: It turns out that accessing the elements in the multi-array as
     // `features[[channel, cy, cx] as [NSNumber]].floatValue` is kinda slow.
@@ -86,13 +87,12 @@ class YOLO {
           let th = Float(featurePointer[offset(channel + 3, cx, cy)])
           let tc = Float(featurePointer[offset(channel + 4, cx, cy)])
             
-            print("(\(tx), \(ty)), (\(tw),\(th))")
           // The predicted tx and ty coordinates are relative to the location
           // of the grid cell; we use the logistic sigmoid to constrain these
           // coordinates to the range 0 - 1. Then we add the cell coordinates
           // (0-12) and multiply by the number of pixels per grid cell (32).
           // Now x and y represent center of the bounding box in the original
-          // 416x416 image space.
+          // 608x608 image space.
           let x = (Float(cx) + sigmoid(tx)) * blockSize
           let y = (Float(cy) + sigmoid(ty)) * blockSize
 
@@ -127,7 +127,7 @@ class YOLO {
           // tells us what kind of object it detected (but not where).
           let confidenceInClass = bestClassScore * confidence
 
-          // Since we compute 13x13x5 = 845 bounding boxes, we only want to
+          // Since we compute 19x19x5 = 1805 bounding boxes, we only want to
           // keep the ones whose combined score is over a certain threshold.
           if confidenceInClass > confidenceThreshold {
             let rect = CGRect(x: CGFloat(x - w/2), y: CGFloat(y - h/2),

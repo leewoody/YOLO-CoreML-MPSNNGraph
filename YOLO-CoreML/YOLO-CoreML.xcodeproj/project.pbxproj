@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7BA1C6D01EF27DA000BB25EF /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC25FB51EF27C0D002ECBBA /* VideoCapture.swift */; };
-		7BA1C6D21EF2827800BB25EF /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1C6D11EF2827500BB25EF /* UIImage+CVPixelBuffer.swift */; };
 		7BA1C6D61EF2861600BB25EF /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1C6D51EF2861400BB25EF /* BoundingBox.swift */; };
 		7BA1C6DA1EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1C6D91EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift */; };
 		7BA1C6DC1EF2B57200BB25EF /* dog416.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BA1C6DB1EF2B56D00BB25EF /* dog416.png */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7BA1C6D11EF2827500BB25EF /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		7BA1C6D51EF2861400BB25EF /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoundingBox.swift; path = ../../Common/BoundingBox.swift; sourceTree = "<group>"; };
 		7BA1C6D91EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
 		7BA1C6DB1EF2B56D00BB25EF /* dog416.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dog416.png; path = ../../Common/dog416.png; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 				7BA1C6D91EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift */,
 				7BA1C6DB1EF2B56D00BB25EF /* dog416.png */,
 				7BC25FAD1EF1B7D1002ECBBA /* Info.plist */,
-				7BA1C6D11EF2827500BB25EF /* UIImage+CVPixelBuffer.swift */,
 				7BC25FB51EF27C0D002ECBBA /* VideoCapture.swift */,
 			);
 			path = "YOLO-CoreML";
@@ -158,7 +155,6 @@
 			files = (
 				7BA1C6D01EF27DA000BB25EF /* VideoCapture.swift in Sources */,
 				7BA1C6DA1EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift in Sources */,
-				7BA1C6D21EF2827800BB25EF /* UIImage+CVPixelBuffer.swift in Sources */,
 				8020907D202C8C8D0017321C /* ViewController.swift in Sources */,
 				8020907C202C8C8D0017321C /* Helpers.swift in Sources */,
 				8020906C202C8BF30017321C /* yolo.mlmodel in Sources */,

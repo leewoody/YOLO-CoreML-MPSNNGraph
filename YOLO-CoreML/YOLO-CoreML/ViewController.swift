@@ -17,9 +17,6 @@ class ViewController: UIViewController {
   var boundingBoxes = [BoundingBox]()
   var colors: [UIColor] = []
 
-//  let ciContext = CIContext()
-//  var resizedPixelBuffer: CVPixelBuffer?
-
   var framesDone = 0
   var frameCapturingStartTime = CACurrentMediaTime()
   let semaphore = DispatchSemaphore(value: 2)
@@ -30,7 +27,6 @@ class ViewController: UIViewController {
     timeLabel.text = ""
 
     setUpBoundingBoxes()
-//    setUpCoreImage()
     setUpVision()
     setUpCamera()
 
@@ -60,16 +56,7 @@ class ViewController: UIViewController {
       }
     }
   }
-/*
-  func setUpCoreImage() {
-    let status = CVPixelBufferCreate(nil, YOLO.inputWidth, YOLO.inputHeight,
-                                     kCVPixelFormatType_32BGRA, nil,
-                                     &resizedPixelBuffer)
-    if status != kCVReturnSuccess {
-      print("Error: could not create resized pixel buffer", status)
-    }
-  }
-*/
+  
   func setUpVision() {
     guard let visionModel = try? VNCoreMLModel(for: yolo.model.model) else {
       print("Error: could not create Vision model")
@@ -123,38 +110,6 @@ class ViewController: UIViewController {
   }
 
   // MARK: - Doing inference
-/*
-  func predict(image: UIImage) {
-    if let pixelBuffer = image.pixelBuffer(width: YOLO.inputWidth, height: YOLO.inputHeight) {
-      predict(pixelBuffer: pixelBuffer)
-    }
-  }
-
-  func predict(pixelBuffer: CVPixelBuffer) {
-    // Measure how long it takes to predict a single video frame.
-    let startTime = CACurrentMediaTime()
-
-    // Resize the input with Core Image to 416x416.
-    guard let resizedPixelBuffer = resizedPixelBuffer else { return }
-    let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
-    let sx = CGFloat(YOLO.inputWidth) / CGFloat(CVPixelBufferGetWidth(pixelBuffer))
-    let sy = CGFloat(YOLO.inputHeight) / CGFloat(CVPixelBufferGetHeight(pixelBuffer))
-    let scaleTransform = CGAffineTransform(scaleX: sx, y: sy)
-    let scaledImage = ciImage.transformed(by: scaleTransform)
-    ciContext.render(scaledImage, to: resizedPixelBuffer)
-
-    // This is an alternative way to resize the image (using vImage):
-    //if let resizedPixelBuffer = resizePixelBuffer(pixelBuffer,
-    //                                              width: YOLO.inputWidth,
-    //                                              height: YOLO.inputHeight)
-
-    // Resize the input to 416x416 and give it to our model.
-    if let boundingBoxes = try? yolo.predict(image: resizedPixelBuffer) {
-      let elapsed = CACurrentMediaTime() - startTime
-      showOnMainThread(boundingBoxes, elapsed)
-    }
-  }
-*/
   func predictUsingVision(pixelBuffer: CVPixelBuffer) {
     // Measure how long it takes to predict a single video frame. Note that
     // predict() can be called on the next frame while the previous one is
@@ -178,10 +133,6 @@ class ViewController: UIViewController {
 
   func showOnMainThread(_ boundingBoxes: [YOLO.Prediction], _ elapsed: CFTimeInterval) {
     DispatchQueue.main.async {
-      // For debugging, to make sure the resized CVPixelBuffer is correct.
-      //var debugImage: CGImage?
-      //VTCreateCGImageFromCVPixelBuffer(resizedPixelBuffer, nil, &debugImage)
-      //self.debugImageView.image = UIImage(cgImage: debugImage!)
 
       self.show(predictions: boundingBoxes)
 
@@ -231,7 +182,6 @@ class ViewController: UIViewController {
         // Show the bounding box.
         let label = String(format: "%@ %.1f", labels[prediction.classIndex], prediction.score * 100)
         let color = colors[prediction.classIndex]
-//        print("\(label): \(rect)")
         boundingBoxes[i].show(frame: rect, label: label, color: color)
       } else {
         boundingBoxes[i].hide()
