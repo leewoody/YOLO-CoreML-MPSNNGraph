@@ -9,20 +9,18 @@
 /* Begin PBXBuildFile section */
 		7BA1C6D01EF27DA000BB25EF /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC25FB51EF27C0D002ECBBA /* VideoCapture.swift */; };
 		7BA1C6D61EF2861600BB25EF /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1C6D51EF2861400BB25EF /* BoundingBox.swift */; };
-		7BA1C6DA1EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA1C6D91EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift */; };
 		7BA1C6DC1EF2B57200BB25EF /* dog416.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BA1C6DB1EF2B56D00BB25EF /* dog416.png */; };
 		7BC25FA21EF1B7D1002ECBBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC25FA11EF1B7D1002ECBBA /* AppDelegate.swift */; };
 		7BC25FA91EF1B7D1002ECBBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BC25FA81EF1B7D1002ECBBA /* Assets.xcassets */; };
 		8020906C202C8BF30017321C /* yolo.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8020906B202C8BF30017321C /* yolo.mlmodel */; };
 		8020907A202C8C8D0017321C /* YOLO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80209075202C8C8D0017321C /* YOLO.swift */; };
-		8020907B202C8C8D0017321C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80209076202C8C8D0017321C /* Main.storyboard */; };
-		8020907C202C8C8D0017321C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80209078202C8C8D0017321C /* Helpers.swift */; };
 		8020907D202C8C8D0017321C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80209079202C8C8D0017321C /* ViewController.swift */; };
+		805125AB202EBA8000CF1DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805125A9202EBA8000CF1DD0 /* Main.storyboard */; };
+		805125AD202EBA8900CF1DD0 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805125AC202EBA8900CF1DD0 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7BA1C6D51EF2861400BB25EF /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BoundingBox.swift; path = ../../Common/BoundingBox.swift; sourceTree = "<group>"; };
-		7BA1C6D91EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+Helpers.swift"; sourceTree = "<group>"; };
+		7BA1C6D51EF2861400BB25EF /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
 		7BA1C6DB1EF2B56D00BB25EF /* dog416.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dog416.png; path = ../../Common/dog416.png; sourceTree = "<group>"; };
 		7BC25F9E1EF1B7D1002ECBBA /* YOLO-CoreML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YOLO-CoreML.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BC25FA11EF1B7D1002ECBBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../Common/AppDelegate.swift; sourceTree = "<group>"; };
@@ -31,9 +29,9 @@
 		7BC25FB51EF27C0D002ECBBA /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		8020906B202C8BF30017321C /* yolo.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = yolo.mlmodel; sourceTree = "<group>"; };
 		80209075202C8C8D0017321C /* YOLO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YOLO.swift; sourceTree = "<group>"; };
-		80209077202C8C8D0017321C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../YOLO-CoreML-MPSNNGraph/TinyYOLO-CoreML/TinyYOLO-CoreML/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
-		80209078202C8C8D0017321C /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = "../../../YOLO-CoreML-MPSNNGraph/Common/Helpers.swift"; sourceTree = "<group>"; };
 		80209079202C8C8D0017321C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		805125AA202EBA8000CF1DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		805125AC202EBA8900CF1DD0 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,20 +64,27 @@
 		7BC25FA01EF1B7D1002ECBBA /* YOLO-CoreML */ = {
 			isa = PBXGroup;
 			children = (
+				805125AE202EBB4300CF1DD0 /* Helpers */,
 				8020906B202C8BF30017321C /* yolo.mlmodel */,
 				7BC25FA11EF1B7D1002ECBBA /* AppDelegate.swift */,
 				7BC25FA81EF1B7D1002ECBBA /* Assets.xcassets */,
-				80209078202C8C8D0017321C /* Helpers.swift */,
-				80209076202C8C8D0017321C /* Main.storyboard */,
 				80209079202C8C8D0017321C /* ViewController.swift */,
+				805125A9202EBA8000CF1DD0 /* Main.storyboard */,
 				80209075202C8C8D0017321C /* YOLO.swift */,
-				7BA1C6D51EF2861400BB25EF /* BoundingBox.swift */,
-				7BA1C6D91EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift */,
 				7BA1C6DB1EF2B56D00BB25EF /* dog416.png */,
 				7BC25FAD1EF1B7D1002ECBBA /* Info.plist */,
-				7BC25FB51EF27C0D002ECBBA /* VideoCapture.swift */,
 			);
 			path = "YOLO-CoreML";
+			sourceTree = "<group>";
+		};
+		805125AE202EBB4300CF1DD0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				805125AC202EBA8900CF1DD0 /* Helpers.swift */,
+				7BA1C6D51EF2861400BB25EF /* BoundingBox.swift */,
+				7BC25FB51EF27C0D002ECBBA /* VideoCapture.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8020907B202C8C8D0017321C /* Main.storyboard in Resources */,
+				805125AB202EBA8000CF1DD0 /* Main.storyboard in Resources */,
 				7BA1C6DC1EF2B57200BB25EF /* dog416.png in Resources */,
 				7BC25FA91EF1B7D1002ECBBA /* Assets.xcassets in Resources */,
 			);
@@ -154,9 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BA1C6D01EF27DA000BB25EF /* VideoCapture.swift in Sources */,
-				7BA1C6DA1EF2B30200BB25EF /* CVPixelBuffer+Helpers.swift in Sources */,
+				805125AD202EBA8900CF1DD0 /* Helpers.swift in Sources */,
 				8020907D202C8C8D0017321C /* ViewController.swift in Sources */,
-				8020907C202C8C8D0017321C /* Helpers.swift in Sources */,
 				8020906C202C8BF30017321C /* yolo.mlmodel in Sources */,
 				7BA1C6D61EF2861600BB25EF /* BoundingBox.swift in Sources */,
 				8020907A202C8C8D0017321C /* YOLO.swift in Sources */,
@@ -167,10 +171,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		80209076202C8C8D0017321C /* Main.storyboard */ = {
+		805125A9202EBA8000CF1DD0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				80209077202C8C8D0017321C /* Base */,
+				805125AA202EBA8000CF1DD0 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
